@@ -1,0 +1,28 @@
+.appContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+.title {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 300;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 0.3em;
+  color: lightgray;
+}
+
+.link:hover {
+  color: white;
+}
