@@ -1,32 +1,29 @@
-.leftContainer {
-  width: 25%;
-  height: 80vh;
-  float: left;
-  background-color: #7886ff;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.buildHeadline {
-  font-weight: lighter;
-  font-size: 1.5em;
-}
-
-.your {
-  font-weight: bold;
-}
-
 .center {
   display: flex;
   justify-content: center;
 }
 
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .rightContainer {
-  float: right;
-  width: 50%;
+  width: 40%;
   height: 70vh;
-  margin-right: 5%;
-  margin-top: 2%;
+  animation: slideInFromRight 0.3s ease-out;
+  margin-right: 6%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  gap: 1em;
+  display: flex;
+  flex-direction: row;
+  color: lightgray;
 }
 
 .headline {
@@ -66,15 +63,13 @@
 }
 
 .rightBottomContainer {
-  margin-top: 20%;
-  float: right;
-  width: 40%;
-  height: 70vh;
-  margin-right: 2%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1em;
+  height: 50vh;
+  width: 30%;
+  font-size: 1.5rem;
+}
+.rightBottomContainer h1 {
+  font-size: 2.5rem;
+  font-weight: lighter;
 }
 
 .searchButton {
@@ -96,16 +91,6 @@
   transform: translateY(-10px);
 }
 
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1em;
-  margin-top: 0.3em;
-  color: lightgray;
-}
-
 .applyEmpty {
   background-color: rgb(18, 18, 18);
   border-radius: 5px;
@@ -114,17 +99,96 @@
 }
 
 .billingContainer {
-  float: left;
-  margin-top: 8%;
   height: 80vh;
   width: 50%;
 }
 
-@media screen and (max-width: 768px) {
-  .leftContainer {
-    display: none;
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.offerContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5.3%;
+}
+
+.offerContainer h1 {
+  font-size: 3rem;
+  font-weight: lighter;
+  margin-top: 4%;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .topContainer {
+    justify-content: center;
   }
   .rightContainer {
-    width: 90%;
+    width: 100%;
+    margin-left: 10%;
+  }
+
+  .bottomContainer {
+    flex-direction: column;
+  }
+
+  .rightBottomContainer {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+  }
+
+  .offerContainer {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .billingContainer {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .headline h1 {
+    font-size: 2ch;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .headline {
+    font-size: 1ch;
+    text-align: center;
+  }
+  .searchButton {
+    font-size: 1.4ch;
+  }
+  .buttonContainer {
+    align-items: center;
+    justify-content: center;
+  }
+  .topContainer {
+    height: 30vh;
+  }
+  .offerContainer h1 {
+    font-size: 3.5ch;
+  }
+
+  .rightBottomContainer h1 {
+    font-size: 1.4ch;
   }
 }
