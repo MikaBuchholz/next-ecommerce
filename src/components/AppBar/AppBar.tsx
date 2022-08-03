@@ -5,7 +5,9 @@ import Link from "next/link";
 const AppBar: NextPage = () => {
   return (
     <div className={styles.appContainer}>
-      <h1 className={styles.title}>Bike Factory</h1>
+      <h1 className={styles.title}>
+        <Link href="/">Bike Factory</Link>
+      </h1>
       <div className={styles.navigation}>
         <Link href="/about">
           <a className={styles.link}>About</a>
