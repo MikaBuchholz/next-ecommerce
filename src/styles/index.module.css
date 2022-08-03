@@ -66,10 +66,17 @@
   height: 50vh;
   width: 30%;
   font-size: 1.5rem;
+  display: none;
 }
 .rightBottomContainer h1 {
   font-size: 2.5rem;
   font-weight: lighter;
+}
+
+.observer {
+  position: absolute;
+  margin-top: 21%;
+  bottom: 1;
 }
 
 .searchButton {
@@ -101,6 +108,7 @@
 .billingContainer {
   height: 80vh;
   width: 50%;
+  display: none;
 }
 
 .bottomContainer {
@@ -115,12 +123,50 @@
   display: flex;
   justify-content: flex-start;
   margin-left: 5.3%;
+  display: none;
 }
 
 .offerContainer h1 {
   font-size: 3rem;
   font-weight: lighter;
   margin-top: 4%;
+}
+
+.applyBillingAnimation {
+  animation: slideAndFadeInFromTop 1s ease-in-out;
+  display: block;
+}
+
+.applyHeadlineAnimation {
+  animation: slideAndFadinFromLeft 0.6s ease-in-out;
+  display: block;
+}
+
+.applyTextAnimation {
+  animation: slideAndFadeInFromBottom 1s ease-in-out;
+  display: block;
+}
+
+@keyframes slideAndFadinFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideAndFadeInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInFromRight {
@@ -132,12 +178,24 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@keyframes slideAndFadeInFromTop {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1100px) {
   .topContainer {
     justify-content: center;
   }
   .rightContainer {
     width: 100%;
+    height: 100%;
     margin-left: 10%;
   }
 
@@ -165,6 +223,9 @@
 
 @media screen and (max-width: 1400px) {
   .headline h1 {
+    font-size: 3ch;
+  }
+  .rightBottomContainer h1 {
     font-size: 2ch;
   }
 }
