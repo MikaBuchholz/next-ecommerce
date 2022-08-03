@@ -8,10 +8,10 @@ import bike4 from "../../assets/bike4.svg";
 import { useState } from "react";
 
 const bikes = [
-  <Image src={bike1} alt="a bike" key={bike1} className={styles.google} />,
-  <Image src={bike2} alt="a bike" key={bike2} className={styles.google} />,
-  <Image src={bike3} alt="a bike" key={bike3} className={styles.google} />,
-  <Image src={bike4} alt="a bike" key={bike4} className={styles.google} />,
+  <Image src={bike1} alt="a bike" key={bike1} />,
+  <Image src={bike2} alt="a bike" key={bike2} />,
+  <Image src={bike3} alt="a bike" key={bike3} />,
+  <Image src={bike4} alt="a bike" key={bike4} />,
 ];
 
 const defaultStyle = styles.bikeItem;
@@ -49,7 +49,15 @@ const BikeSelector: NextPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.bikeWrapper}>
+      <div className={styles.topInfoContainer}>
+        <h1>
+          Create <span className={styles.applyBold}>Your</span> Bike
+        </h1>
+        <p>
+          Bike <span className={styles.applyOrange}>Style</span>
+        </p>
+      </div>
       <div className={styles.bikeContainer}>
         {bikes.map((bike: any, index: number) => {
           return (
