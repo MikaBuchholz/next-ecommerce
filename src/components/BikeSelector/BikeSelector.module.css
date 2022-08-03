@@ -10,6 +10,32 @@
   border-radius: 5px;
 }
 
+.bikeWrapper {
+  width: 25%;
+  height: 72vh;
+  background-color: #7886ff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  animation: slideInFromLeft 0.5s;
+  margin-top: 2%;
+}
+
+.topInfoContainer h1 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: #fff;
+  margin-top: 2%;
+}
+
+.topInfoContainer p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 1%;
+}
+
 .bikeItem {
   background-color: #4e5ff9;
   height: 8vh;
@@ -25,7 +51,7 @@
 
 .bikeItem:hover {
   opacity: 0.8;
-  animation: hop 0.5s ease-out infinite;
+  animation: hop 0.8s ease-out infinite;
   animation-delay: 0.1s;
 }
 
@@ -49,6 +75,14 @@
   flex-direction: column;
 }
 
+.applyOrange {
+  color: #f3c677;
+}
+
+.applyBold {
+  font-weight: bold;
+}
+
 .applyGreen {
   color: #16c172;
 }
@@ -60,11 +94,6 @@
 
 .applyPurple {
   color: #ec9ded;
-}
-
-.google {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-  color: rgb(18, 18, 18);
 }
 
 .slideWrapper {
@@ -146,7 +175,7 @@
 
 .colorContainer:hover {
   opacity: 0.8;
-  animation: hop 0.8s ease-in-out infinite;
+  animation: hop 0.9s ease-in-out infinite;
   animation-delay: 0.1s;
 }
 
@@ -160,4 +189,31 @@
   100% {
     transform: translateY(0);
   }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .bikeWrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bikeWrapper {
+    width: 30%;
+  }
+}
+
+.topInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
