@@ -1,11 +1,48 @@
 import type { NextPage } from "next";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import BikeSelector from "~/components/BikeSelector/BikeSelector";
 import BillingBox from "~/components/BillingBox/BillingBox";
 import styles from "~/styles/index.module.css";
 
 const Home: NextPage = () => {
   const billingRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const [extraCss, setExtraCss] = useState<
+    { billing?: string; headline?: string; text?: string } | undefined
+  >(undefined);
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  function oberserverCallback(entries: IntersectionObserverEntry[]) {
+    const [entry] = entries;
+    if (entry?.isIntersecting) {
+      setExtraCss({
+        billing: styles["applyBillingAnimation"],
+        headline: styles["applyHeadlineAnimation"],
+        text: styles["applyTextAnimation"],
+      });
+    }
+  }
+
+  useEffect(() => {
+    const scrollObserver = new IntersectionObserver(
+      oberserverCallback,
+      options
+    );
+    if (bottomRef.current) {
+      scrollObserver.observe(bottomRef.current);
+    }
+
+    return () => {
+      if (bottomRef.current) {
+        scrollObserver.unobserve(bottomRef.current);
+      }
+    };
+  }, [bottomRef, options]);
 
   return (
     <div>
@@ -31,7 +68,7 @@ const Home: NextPage = () => {
             <button
               className={`${styles.searchButton} ${styles.applyEmpty}`}
               onClick={() => {
-                billingRef?.current!.scrollIntoView({ behavior: "smooth" });
+                bottomRef?.current!.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Billing Plans
@@ -39,13 +76,14 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.offerContainer}>
+      <div className={`${styles.offerContainer} ${extraCss?.headline}`}>
         <h1>
           What We <span className={styles.applyRed}>Offer</span>
         </h1>
       </div>
       <div className={styles.bottomContainer}>
-        <div className={styles.rightBottomContainer}>
+        <div ref={bottomRef} className={styles.observer}></div>
+        <div className={`${styles.rightBottomContainer} ${extraCss?.text}`}>
           <h1>
             <span className={styles.applyOrange}>You decide the price</span>.
             <span className={styles.applyRed}>Three</span> packages{" "}
@@ -57,7 +95,10 @@ const Home: NextPage = () => {
             <span className={styles.applyPurple}>talk</span> with us.
           </h1>
         </div>
-        <div ref={billingRef} className={styles.billingContainer}>
+        <div
+          ref={billingRef}
+          className={`${styles.billingContainer} ${extraCss?.billing}`}
+        >
           <BillingBox />
         </div>
       </div>
