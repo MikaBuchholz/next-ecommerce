@@ -2,7 +2,6 @@ import styles from "./BillingBox.module.css";
 import paint from "../../assets/paint.svg";
 import soap from "../../assets/soap.svg";
 import repair from "../../assets/repair.svg";
-import Image from "next/image";
 import BillingItem from "../BillingItem/BillingItem";
 
 const BillingBoxStyles = [
@@ -14,7 +13,7 @@ const BillingBoxStyles = [
     repaint: "No",
     cleaning: "No",
     title: "Factory Plus",
-    mTop: "10vh",
+    mTopClass: "applyMargin1",
   },
   {
     bgColor: "#DCB6D5",
@@ -24,7 +23,7 @@ const BillingBoxStyles = [
     repaint: "No",
     cleaning: "Yes",
     title: "Factory Silver",
-    mTop: "5vh",
+    mTopClass: "applyMargin2",
   },
   {
     bgColor: "#CF8BA9",
@@ -34,7 +33,7 @@ const BillingBoxStyles = [
     repaint: "Yes",
     cleaning: "Yes",
     title: "Factory Gold",
-    mTop: "0",
+    mTopClass: "applyMargin3",
   },
 ];
 
@@ -44,9 +43,9 @@ export default function BillingBox() {
       {BillingBoxStyles.map((style) => {
         return (
           <div
-            className={styles.billingBox}
+            className={`${styles.billingBox} ${styles[style.mTopClass]}`}
             key={style.title}
-            style={{ backgroundColor: style.bgColor, marginTop: style.mTop }}
+            style={{ backgroundColor: style.bgColor }}
           >
             <h1>{style.title}</h1>
             <div className={styles.circle}>{style.price} / m</div>
