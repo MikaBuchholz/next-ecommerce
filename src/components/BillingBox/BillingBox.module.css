@@ -1,0 +1,48 @@
+.billingContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-gap: 3%;
+  margin-top: 2em;
+  margin-left: 3%;
+  color: #313638;
+}
+
+.billingBox {
+  width: 16vw;
+  height: 50vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.seperator {
+  width: 50%;
+}
+
+.repairs {
+  display: flex;
+  gap: 0.5em;
+}
+
+.p {
+  padding: 0;
+  padding-top: 0.5em;
+  margin: 0;
+}
+
+.billingItemContainer {
+  margin-top: 1.5em;
+}
