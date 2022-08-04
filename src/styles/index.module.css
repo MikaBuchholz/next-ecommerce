@@ -73,10 +73,20 @@
   font-weight: lighter;
 }
 
+.observer2 {
+  position: absolute;
+  bottom: 1;
+  left: 1;
+  width: 1px;
+  height: 1px;
+  margin-top: 100vh;
+}
+
 .observer {
   position: absolute;
-  margin-top: 21%;
   bottom: 1;
+  left: 1;
+  margin-top: 20vh;
 }
 
 .searchButton {
@@ -134,16 +144,25 @@
 
 .applyBillingAnimation {
   animation: slideAndFadeInFromTop 1s ease-in-out;
+
   display: block;
+}
+
+.scrollToDiv {
+  position: absolute;
+  bottom: 1;
+  margin-top: 30vh;
 }
 
 .applyHeadlineAnimation {
   animation: slideAndFadinFromLeft 0.6s ease-in-out;
+
   display: block;
 }
 
 .applyTextAnimation {
   animation: slideAndFadeInFromBottom 1s ease-in-out;
+
   display: block;
 }
 
