@@ -101,6 +101,18 @@
   z-index: auto;
 }
 
+.colorOne {
+  background-color: #de4d86;
+}
+
+.colorTwo {
+  background-color: #f29ca3;
+}
+
+.colorThree {
+  background-color: #f7cacd;
+}
+
 @keyframes slideAndFadeInFromTop {
   0% {
     opacity: 0;
