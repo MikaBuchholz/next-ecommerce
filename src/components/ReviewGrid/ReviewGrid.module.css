@@ -1,0 +1,97 @@
+.grid {
+  margin-top: 1%;
+}
+
+.gridItem {
+  width: 326px;
+  height: 200px;
+  background: #a882dd;
+  border-radius: 11px;
+  margin-top: 5%;
+  position: relative;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  padding: 3%;
+  gap: 3%;
+  color: rgb(18, 18, 18);
+  z-index: -1;
+}
+
+.reviewContent {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 1.5ch;
+  margin-left: 15%;
+  min-height: 7em;
+  margin-right: 10%;
+  color: rgb(18, 18, 18);
+}
+.reviewFooterWrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.reviewFooter {
+  display: inline-block;
+  background-color: #394648;
+  padding: 0;
+  border-radius: 5px;
+  margin-right: 2%;
+}
+
+.reviewFooter p {
+  margin: 0.3em;
+  font-weight: lighter;
+}
+
+.applyRed {
+  color: #f15152;
+}
+
+.m1 {
+  margin-left: 3%;
+  z-index: -1;
+}
+
+.m2 {
+  margin-left: 7%;
+  z-index: -1;
+}
+
+.m3 {
+  margin-left: 12%;
+  z-index: -1;
+}
+
+.applyAnim1 {
+  animation: slideAndFadeInFromLeft 0.6s ease-in-out;
+
+  z-index: auto;
+}
+
+.applyAnim2 {
+  animation: slideAndFadeInFromLeft 0.6s ease-in-out;
+  z-index: auto;
+}
+
+.applyAnim3 {
+  animation: slideAndFadeInFromLeft 0.6s ease-in-out;
+  z-index: auto;
+}
+
+@keyframes slideAndFadeInFromLeft {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
