@@ -1,0 +1,135 @@
+.roadMapContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 2%;
+}
+
+.roadMapContainer p {
+  font-size: 2ch;
+  text-align: center;
+  font-weight: lighter;
+  position: relative;
+}
+
+.roadMapItemLeft {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.roadMapItemLeft2 {
+  display: grid;
+  grid-template-columns: 1.43fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.roadMapItemRight {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  grid-template-columns: 1.2fr 0.6fr 1fr;
+}
+
+.roadMapItem p {
+  margin-left: auto;
+}
+
+.pTag {
+  position: relative;
+  z-index: -1;
+}
+
+.line {
+  height: 25%;
+  width: 3px;
+  background-color: #e86252;
+  position: relative;
+  z-index: -1;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e87ea1;
+  position: relative;
+  z-index: -1;
+}
+
+.applyAnim1 {
+  animation: slideAndFadeInFromTop 0.3s ease-in-out;
+  z-index: auto;
+}
+
+.applyAnim2 {
+  animation: slideAndFadeInFromTop 0.5s ease-in-out;
+
+  z-index: auto;
+}
+
+.applyAnim3 {
+  animation: slideAndFadeInFromTop 0.7s ease-in-out;
+
+  z-index: auto;
+}
+
+.applyAnim4 {
+  animation: slideAndFadeInFromLeft 0.9s ease-in-out;
+
+  z-index: auto;
+}
+
+.applyAnim5 {
+  animation: slideAndFadeInFromLeft 1.1s ease-in-out;
+
+  z-index: auto;
+}
+
+.applyAnim6 {
+  animation: slideAndFadinInFromRight 1.3s ease-in-out;
+
+  z-index: auto;
+}
+
+@keyframes slideAndFadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideAndFadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideAndFadinInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
