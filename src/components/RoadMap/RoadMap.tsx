@@ -21,7 +21,7 @@ export default function RoadMap(props: IRoadMapProps) {
           <div
             className={`${styles.circle} ${
               trigger ? styles.applyAnim1 : undefined
-            }`}
+            }  ${styles.colorOne}`}
           ></div>
         </div>
 
@@ -36,7 +36,7 @@ export default function RoadMap(props: IRoadMapProps) {
           <div
             className={`${styles.circle} ${
               trigger ? styles.applyAnim2 : undefined
-            }`}
+            } ${styles.colorTwo}`}
           ></div>
           <p
             className={`${trigger ? styles.applyAnim6 : undefined} ${
@@ -64,7 +64,7 @@ export default function RoadMap(props: IRoadMapProps) {
           <div
             className={`${styles.circle} ${
               trigger ? styles.applyAnim3 : undefined
-            }`}
+            }  ${styles.colorThree}`}
           ></div>
         </div>
       </div>
