@@ -7,7 +7,6 @@ import ReviewGrid from "~/components/ReviewGrid/ReviewGrid";
 import styles from "~/styles/index.module.css";
 import RoadMap from "~/components/RoadMap/RoadMap";
 import words from "../assets/words.svg";
-import bgBike from "../assets/bgBike.svg";
 
 const Home: NextPage = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
