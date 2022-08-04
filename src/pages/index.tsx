@@ -2,12 +2,15 @@ import type { NextPage } from "next";
 import { useRef, useState, useEffect } from "react";
 import BikeSelector from "~/components/BikeSelector/BikeSelector";
 import BillingBox from "~/components/BillingBox/BillingBox";
+import ReviewGrid from "~/components/ReviewGrid/ReviewGrid";
 import styles from "~/styles/index.module.css";
+import RoadMap from "~/components/RoadMap/RoadMap";
 
 const Home: NextPage = () => {
-  const textRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const scrollToRef = useRef<HTMLDivElement>(null);
+  const reviewRef = useRef<HTMLDivElement>(null);
+  const [triggerReviewAnimation, setTriggerReviewAnimation] = useState(false);
   const [extraCss, setExtraCss] = useState<
     { billing?: string; headline?: string; text?: string } | undefined
   >(undefined);
@@ -20,6 +23,13 @@ const Home: NextPage = () => {
         headline: styles["applyHeadlineAnimation"],
         text: styles["applyTextAnimation"],
       });
+    }
+  }
+
+  function reviewCallback(entries: IntersectionObserverEntry[]) {
+    const [entry] = entries;
+    if (entry?.isIntersecting) {
+      setTriggerReviewAnimation(true);
     }
   }
 
@@ -43,6 +53,24 @@ const Home: NextPage = () => {
       }
     };
   }, [bottomRef]);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 1.0,
+    };
+    const scrollObserver = new IntersectionObserver(reviewCallback, options);
+    if (reviewRef.current) {
+      scrollObserver.observe(reviewRef.current);
+    }
+
+    return () => {
+      if (reviewRef.current) {
+        scrollObserver.unobserve(reviewRef.current);
+      }
+    };
+  }, [reviewRef]);
 
   return (
     <>
@@ -69,16 +97,8 @@ const Home: NextPage = () => {
               <button
                 className={`${styles.searchButton} ${styles.applyEmpty}`}
                 onClick={() => {
-                  let ref;
-
-                  if (extraCss !== undefined) {
-                    ref = textRef;
-                  } else {
-                    ref = scrollToRef;
-                  }
-
-                  if (ref.current) {
-                    ref.current.scrollIntoView({
+                  if (scrollToRef.current) {
+                    scrollToRef.current.scrollIntoView({
                       behavior: "smooth",
                     });
                   }
@@ -90,13 +110,16 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className={styles.offerContainer}>
-          <h1 className={`${styles.offerH1} ${extraCss?.headline}`}>
+          <h1
+            className={`${styles.offerH1} ${extraCss?.headline}`}
+            ref={scrollToRef}
+          >
             What We <span className={styles.applyRed}>Offer</span>
           </h1>
         </div>
         <div className={styles.bottomContainer}>
           <div ref={bottomRef} className={styles.observer}></div>
-          <div ref={textRef} className={styles.observer3}></div>
+          <div className={styles.observer3}></div>
           <div className={`${styles.rightBottomContainer} ${extraCss?.text}`}>
             <h1>
               <span className={styles.applyOrange}>You decide the price</span>.
@@ -115,7 +138,34 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div ref={scrollToRef} className={styles.observer2}></div>
+      <div className={styles.observer2}></div>
+      <div className={styles.reviewGridWrapper}>
+        <div className={styles.reviewH1Wrapper}>
+          <h1
+            className={`${styles.reviewH1} ${
+              triggerReviewAnimation ? styles.applyAnim4 : undefined
+            }`}
+          >
+            What You <span className={styles.applyRed}> Experienced</span>
+          </h1>
+        </div>
+
+        <p
+          className={`${
+            triggerReviewAnimation ? styles.applyAnim5 : undefined
+          } ${styles.workP}`}
+        >
+          How <span className={styles.applyBlue}>We</span> Work
+        </p>
+
+        <div ref={reviewRef} className={styles.reviewObserver}></div>
+        <div className={styles.reviewContentContainerWrapper}>
+          <div className={styles.reviewContentContainer}>
+            <ReviewGrid trigger={triggerReviewAnimation} />
+            <RoadMap trigger={triggerReviewAnimation} />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
