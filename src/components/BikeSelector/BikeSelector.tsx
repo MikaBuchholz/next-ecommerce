@@ -94,7 +94,7 @@ const BikeSelector: NextPage = () => {
       </div>
       <div className={styles.center}>
         <p>
-          Your <span className={styles.applyGreen}>Color</span>
+          Your <span className={styles.applyPurple}>Color</span>
         </p>
         <div className={styles.colorGrid}>
           {gridColors.map((color: string, _: number) => {
