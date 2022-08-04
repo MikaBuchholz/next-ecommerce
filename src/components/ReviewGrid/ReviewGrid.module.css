@@ -34,7 +34,7 @@
 }
 .reviewFooterWrapper {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .reviewFooter {
@@ -93,5 +93,27 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-height: 1100px) {
+  .m1 {
+    margin-left: 0%;
+  }
+
+  .m2 {
+    margin-left: 0%;
+  }
+
+  .m3 {
+    margin-left: 0%;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
