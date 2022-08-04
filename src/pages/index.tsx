@@ -5,6 +5,7 @@ import BillingBox from "~/components/BillingBox/BillingBox";
 import styles from "~/styles/index.module.css";
 
 const Home: NextPage = () => {
+  const textRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const scrollToRef = useRef<HTMLDivElement>(null);
   const [extraCss, setExtraCss] = useState<
@@ -68,10 +69,19 @@ const Home: NextPage = () => {
               <button
                 className={`${styles.searchButton} ${styles.applyEmpty}`}
                 onClick={() => {
-                  scrollToRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
+                  let ref;
+
+                  if (extraCss !== undefined) {
+                    ref = textRef;
+                  } else {
+                    ref = scrollToRef;
+                  }
+
+                  if (ref.current) {
+                    ref.current.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }
                 }}
               >
                 Billing Plans
@@ -79,13 +89,14 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className={`${styles.offerContainer} ${extraCss?.headline}`}>
-          <h1>
+        <div className={styles.offerContainer}>
+          <h1 className={`${styles.offerH1} ${extraCss?.headline}`}>
             What We <span className={styles.applyRed}>Offer</span>
           </h1>
         </div>
         <div className={styles.bottomContainer}>
           <div ref={bottomRef} className={styles.observer}></div>
+          <div ref={textRef} className={styles.observer3}></div>
           <div className={`${styles.rightBottomContainer} ${extraCss?.text}`}>
             <h1>
               <span className={styles.applyOrange}>You decide the price</span>.
