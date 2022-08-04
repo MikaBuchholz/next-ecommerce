@@ -39,7 +39,7 @@ export default function ReviewGrid(props: IReviewGridProps) {
 
   return (
     <div className={styles.grid}>
-      {gridItems.map((item, index) => (
+      {gridItems.map((_, index) => (
         <div
           className={`${styles.gridItem} ${itemCss[index]} ${
             trigger ? content[index]?.animation : undefined
