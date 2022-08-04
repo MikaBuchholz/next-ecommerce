@@ -96,7 +96,7 @@
   }
 }
 
-@media screen and (max-height: 1100px) {
+@media screen and (max-width: 1100px) {
   .m1 {
     margin-left: 0%;
   }
