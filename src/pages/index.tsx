@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import BikeSelector from "~/components/BikeSelector/BikeSelector";
 import BillingBox from "~/components/BillingBox/BillingBox";
 import ReviewGrid from "~/components/ReviewGrid/ReviewGrid";
 import styles from "~/styles/index.module.css";
 import RoadMap from "~/components/RoadMap/RoadMap";
+import words from "../assets/words.svg";
 
 const Home: NextPage = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -139,6 +141,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className={styles.observer2}></div>
+      <hr className={styles.breaker} />
       <div className={styles.reviewGridWrapper}>
         <div className={styles.reviewH1Wrapper}>
           <h1
@@ -163,6 +166,13 @@ const Home: NextPage = () => {
           <div className={styles.reviewContentContainer}>
             <ReviewGrid trigger={triggerReviewAnimation} />
             <RoadMap trigger={triggerReviewAnimation} />
+            <div
+              className={`${
+                triggerReviewAnimation ? styles.applyAnim7 : undefined
+              } ${styles.cluster}`}
+            >
+              <Image src={words} alt="words" />
+            </div>
           </div>
         </div>
       </div>
