@@ -7,6 +7,7 @@ import ReviewGrid from "~/components/ReviewGrid/ReviewGrid";
 import styles from "~/styles/index.module.css";
 import RoadMap from "~/components/RoadMap/RoadMap";
 import words from "../assets/words.svg";
+import bgBike from "../assets/bgBike.svg";
 
 const Home: NextPage = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -76,7 +77,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div>
+      <div className={styles.bgBike}>
+        <div className={styles.image}></div>
+      </div>
+      <div className={styles.index}>
         <div className={styles.topContainer}>
           <BikeSelector />
           <div className={styles.rightContainer}>
