@@ -3,6 +3,14 @@
   justify-content: center;
 }
 
+.index {
+  background-image: url(../assets/bgBike.svg);
+  background-repeat: no-repeat;
+  background-position: left 50% bottom 100%;
+  background-size: 70%;
+  animation: slideAndFadeInFromTop 0.7s ease-in-out;
+}
+
 .topContainer {
   display: flex;
   flex-direction: row;
