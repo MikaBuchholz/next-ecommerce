@@ -244,6 +244,21 @@
   z-index: auto;
 }
 
+.cluster {
+  position: relative;
+  z-index: -1;
+}
+
+.applyAnim7 {
+  animation: slideAndFadeInFromBottom 1s ease-in-out;
+  z-index: auto;
+}
+
+.breaker {
+  width: 70%;
+  border: #353535 solid 1px;
+}
+
 @keyframes slideAndFadinFromLeft {
   0% {
     transform: translateX(-20%);
@@ -325,6 +340,18 @@
   .billingContainer {
     width: 60%;
     height: 100%;
+  }
+
+  .reviewContentContainer {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+  }
+
+  .cluster {
+    display: flex;
+    justify-content: center;
   }
 }
 
