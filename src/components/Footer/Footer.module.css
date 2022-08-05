@@ -1,0 +1,35 @@
+.footerWrapper {
+  width: 100%;
+  padding: 0.9%;
+  margin-top: 1%;
+  background-color: #1a1a1a;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: row;
+  gap: 8%;
+}
+
+.footerNav > p {
+  color: #939393;
+  cursor: pointer;
+}
+
+.footerNav > p:hover {
+  color: #fff;
+}
+
+.footerGithub {
+  cursor: pointer;
+}
+.footerGithub:hover {
+  opacity: 0.6;
+}
