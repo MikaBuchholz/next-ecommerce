@@ -15,7 +15,8 @@ const bikes = [
 ];
 
 const defaultStyle = styles.bikeItem;
-const activeBikeStyle = styles.activeBike;
+const activeBikeStyle = styles.bikeShadowInset;
+const activeBikeDefault = styles.activeBike;
 
 const gridColors = [
   "#CAA8F5",
@@ -40,11 +41,18 @@ const BikeSelector: NextPage = () => {
 
   const setActiveBike = (passedIndex: number) => {
     setActiveStyle((prevState) => {
-      return prevState.map((_, index) =>
-        passedIndex === index
-          ? (prevState[index] = `${defaultStyle} ${activeBikeStyle}`)
-          : (prevState[index] = defaultStyle)
-      );
+      return prevState.map((_, index) => {
+        if (
+          passedIndex === index &&
+          prevState[index]?.includes(activeBikeStyle!)
+        ) {
+          return `${defaultStyle} ${activeBikeDefault}`;
+        } else if (passedIndex === index) {
+          return `${defaultStyle} ${activeBikeStyle}`;
+        } else {
+          return defaultStyle;
+        }
+      });
     });
   };
 
