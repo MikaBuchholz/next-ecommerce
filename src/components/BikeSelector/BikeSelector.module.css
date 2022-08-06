@@ -43,16 +43,20 @@
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-    inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 11px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  transition: transform 0.3s ease-out;
 }
 
 .bikeItem:hover {
-  opacity: 0.8;
-  animation: hop 0.8s ease-out infinite;
-  animation-delay: 0.1s;
+  opacity: 0.9;
+  transition: transform 0.3s ease-in;
+  transform: translateY(-1.5px);
+}
+
+.bikeShadowInset {
+  box-shadow: inset 8px 8px 8px rgba(0, 0, 0, 0.35);
 }
 
 .bikeType {
@@ -88,8 +92,7 @@
 }
 
 .applyRed {
-  color: #f57d7d;
-  font-weight: bold;
+  color: #b1cd26;
 }
 
 .applyPurple {
@@ -171,12 +174,14 @@
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 1em;
+  transition: transform 0.3s ease-out;
+  transform: translateX(0px);
 }
 
 .colorContainer:hover {
   opacity: 0.8;
-  animation: hop 0.9s ease-in-out infinite;
-  animation-delay: 0.1s;
+  transition: transform 0.3s ease-out infinite;
+  transform: translateY(-10px) translateX(4px);
 }
 
 @keyframes hop {
