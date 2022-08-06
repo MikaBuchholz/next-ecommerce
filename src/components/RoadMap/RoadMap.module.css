@@ -145,3 +145,31 @@
     transform: translateX(0);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .roadMapContainer p {
+    font-size: 1.4ch;
+  }
+
+  .line {
+    height: 15%;
+    width: 3px;
+  }
+
+  .circle {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .roadMapItemLeft {
+    grid-template-columns: 1.45fr 1fr 1fr;
+  }
+
+  .roadMapItemLeft2 {
+    grid-template-columns: 1.33fr 1fr 1fr;
+  }
+
+  .roadMapItemRight {
+    grid-template-columns: 1.15fr 0.6fr 1fr;
+  }
+}
