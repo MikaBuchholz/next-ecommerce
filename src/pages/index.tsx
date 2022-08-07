@@ -85,16 +85,19 @@ const Home: NextPage = () => {
           <div className={styles.rightContainer}>
             <div className={styles.headline}>
               <h1>
-                Over <span className={styles.applyYellow}>20 times</span> in
-                Berlin. <span className={styles.applyRed}>Loved</span> and
-                respected by{" "}
+                <span>Over</span>{" "}
+                <span className={styles.applyYellow}>20 times</span>{" "}
+                <span> in Berlin.</span>{" "}
+                <span className={styles.applyRed}>Loved</span>{" "}
+                <span>and respected by</span>{" "}
                 <span className={styles.applyGreen}>
                   customers and competition.
                 </span>{" "}
-                Getting <span className={styles.applyPurple}>your</span> bike
-                was never, this easy. Come{" "}
-                <span className={styles.applyRed}>visit</span> one of our shops
-                in your area.
+                <span>Getting</span>{" "}
+                <span className={styles.applyPurple}>your</span>{" "}
+                <span>bike was never, this easy. Come</span>{" "}
+                <span className={styles.applyRed}>visit</span>{" "}
+                <span>one of our shops in your area.</span>
               </h1>
             </div>
             <div className={styles.buttonContainer}>
