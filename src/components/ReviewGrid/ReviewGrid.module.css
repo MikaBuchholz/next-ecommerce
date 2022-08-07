@@ -4,6 +4,7 @@
 
 .gridItem {
   width: 326px;
+  max-width: 326px;
   height: 200px;
   background: #d183c9;
   border-radius: 11px;
@@ -123,5 +124,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+  .gridItem {
+    margin-top: 5%;
+    height: auto;
+    font-size: 1.2ch;
+    width: 80%;
+  }
+  .reviewContent {
+    padding: 2%;
+  }
+  .reviewFooter {
+    margin-bottom: 2%;
   }
 }
