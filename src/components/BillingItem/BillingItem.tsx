@@ -24,7 +24,7 @@ export default function BillingItem(props: IBillingItemProps) {
         <hr
           style={{
             color: seperatorColor,
-            border: `1px solid ${seperatorColor};`,
+            border: `1px solid ${seperatorColor}`,
           }}
           className={styles.seperator}
         />
