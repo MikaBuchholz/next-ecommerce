@@ -9,6 +9,14 @@
   border-radius: 11px;
   margin-top: 5%;
   position: relative;
+  transition: transform 0.2s ease-out;
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.gridItem:hover {
+  transition: transform 0.2s ease-in;
+  transform: translateX(15%) scale(1.05);
 }
 
 .reviewHeader {
