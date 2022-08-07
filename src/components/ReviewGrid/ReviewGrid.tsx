@@ -2,6 +2,7 @@ import styles from "./ReviewGrid.module.css";
 import Image from "next/image";
 import icon from "../../assets/icon.svg";
 
+const gridColors = ["#8B80F9", "#CFBFF7", "#CFB1B7"];
 const itemCss = [styles["m1"], styles["m2"], styles["m3"]];
 const content = [
   {
@@ -44,6 +45,7 @@ export default function ReviewGrid(props: IReviewGridProps) {
           className={`${styles.gridItem} ${itemCss[index]} ${
             trigger ? content[index]?.animation : undefined
           }`}
+          style={{ backgroundColor: gridColors[index] }}
           key={index}
         >
           <div className={styles.reviewHeader}>
