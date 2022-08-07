@@ -8,7 +8,6 @@
   background-repeat: no-repeat;
   background-position: left 50% bottom 100%;
   background-size: 70%;
-  animation: slideAndFadeInFromTop 0.7s ease-in-out;
 }
 
 .topContainer {
@@ -20,7 +19,7 @@
 .rightContainer {
   width: 40%;
   height: 70vh;
-  animation: slideInFromRight 0.3s ease-out;
+
   margin-right: 6%;
   margin-top: 5%;
   display: flex;
@@ -48,13 +47,25 @@
   flex-wrap: wrap;
 }
 
+.headline > h1 > span:nth-child(even):nth-child(n + 2) {
+  animation: fadeFontIn ease-in 1.3s;
+}
+
+@keyframes fadeFontIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .applyYellow {
   color: #e2c044;
 }
 
 .applyOrange {
   color: #f3c677;
-  font-weight: bold;
 }
 
 .applyGreen {
@@ -71,7 +82,6 @@
 
 .applyRed {
   color: #f57d7d;
-  font-weight: bold;
 }
 
 .rightBottomContainer {
