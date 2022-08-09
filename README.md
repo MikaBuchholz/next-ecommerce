@@ -1,4 +1,4 @@
-# Project-Recap on my first next.js app
+# Project-Recap on my first Next.js app
 
 What this document will _contain_:
 
